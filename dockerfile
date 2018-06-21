@@ -33,30 +33,32 @@ RUN /bin/bash -c "source activate py36" && \
       jupyter \
       bleach==1.5 \
       notebook \
-      tensorflow==1.8 \
-      keras==2.2 \
-      matplotlib \
-      h5py \
-      pandas \
-      scikit-learn \
       plotutils \
       seaborn \
       numpy \
+      matplotlib \
       scipy \
-      gym \
-      opencv-python \
-      tflearn \
+      pandas \
       tqdm \
+      opencv-contrib-python \
       ipython-autotime \
       jupyter_contrib_nbextensions && \
-    jupyter contrib nbextensions install --systemv && \
-    conda install h5py && \
-    conda install -c conda-forge opencv
+    jupyter contrib nbextensions install --system && \
+    jupyter nbextension enable execute_time/ExecuteTime && \
+    conda install h5py  hdf5
+
+
+RUN /bin/bash -c "source activate py36" && \
+    pip --no-cache-dir install \
+      tensorflow==1.8 \
+      keras==2.2 \
+      scikit-learn \
+      gym \
+      tflearn
 
 
 RUN apt clean && \
     apt autoremove
-
 
 
 #IPython
