@@ -12,21 +12,37 @@ RUN apt update && \
       wget \
       bzip2
 
+#requirements for opencv
+RUN   apt update && \
+      apt install -y build-essential \
+      cmake \
+      libgtk2.0-dev \
+      pkg-config \
+      libavcodec-dev \
+      libavformat-dev \
+      libswscale-dev\ libtbb2 \
+      libtbb-dev \
+      libjpeg-dev \
+      libpng-dev \
+      libtiff-dev \
+      libjasper-dev \
+      libdc1394-22-dev
 
+#(mini)conda
 ENV PATH=/opt/conda/bin:${PATH}
 
 RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -q  && \
     bash Miniconda3-latest-Linux-x86_64.sh -b -p /opt/conda && \
     rm Miniconda3-latest-Linux-x86_64.sh
 
-
-
+#create env py36
 RUN conda create --name py36 python=3.6 && \
     conda clean -tipsy && \
     ln -s /opt/conda/etc/profile.d/conda.sh /etc/profile.d/conda.sh && \
     echo ". /opt/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
     echo "conda activate py36" >> ~/.bashrc
 
+#install python packages (non-DL)
 RUN /bin/bash -c "source activate py36" && \
     pip --no-cache-dir install \
       ipykernel \
@@ -47,7 +63,7 @@ RUN /bin/bash -c "source activate py36" && \
     jupyter nbextension enable execute_time/ExecuteTime && \
     conda install h5py  hdf5
 
-
+#install DL-frameworks and kits
 RUN /bin/bash -c "source activate py36" && \
     pip --no-cache-dir install \
       tensorflow==1.8 \
@@ -56,7 +72,7 @@ RUN /bin/bash -c "source activate py36" && \
       gym \
       tflearn
 
-
+#clean up
 RUN apt clean && \
     apt autoremove
 
