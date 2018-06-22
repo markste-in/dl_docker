@@ -58,6 +58,7 @@ RUN /bin/bash -c "source activate py36" && \
       scipy \
       pandas \
       tqdm \
+      pillow \
       opencv-contrib-python \
       ipython-autotime \
       jupyter_contrib_nbextensions && \
@@ -73,6 +74,28 @@ RUN /bin/bash -c "source activate py36" && \
       scikit-learn \
       gym \
       tflearn
+
+#to tinker with cars and CAN
+RUN /bin/bash -c "source activate py36" && \
+    pip --no-cache-dir install \
+      mdfreader \
+      python-can
+
+#Examples
+RUN mkdir -p /docker/examples && \
+    cd /docker/examples && \
+    #Python Data Science Handbook
+    git clone https://github.com/jakevdp/PythonDataScienceHandbook.git && \
+    #TensorFlow
+    git clone https://github.com/nfmcclure/tensorflow_cookbook.git && \
+    git clone https://github.com/Hvass-Labs/TensorFlow-Tutorials.git && \
+    git clone https://github.com/aymericdamien/TensorFlow-Examples.git && \
+    #Keras Ressources
+    git clone https://github.com/fchollet/keras-resources && \
+    git clone https://github.com/buomsoo-kim/Easy-deep-learning-with-Keras && \
+    git clone https://github.com/leriomaggio/deep-learning-keras-tensorflow.git
+
+COPY StartHere.ipynb /docker/
 
 #clean up
 RUN apt clean && \
