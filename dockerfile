@@ -10,23 +10,25 @@ RUN apt update && \
       git \
       curl \
       wget \
-      bzip2
+      bzip2 \
+      software-properties-common
 
 #requirements for opencv
 RUN   apt update && \
       apt install -y build-essential \
-      cmake \
-      libgtk2.0-dev \
-      pkg-config \
-      libavcodec-dev \
-      libavformat-dev \
-      libswscale-dev\ libtbb2 \
-      libtbb-dev \
-      libjpeg-dev \
-      libpng-dev \
-      libtiff-dev \
-      libjasper-dev \
-      libdc1394-22-dev
+        cmake \
+        libgtk2.0-dev \
+        pkg-config \
+        libavcodec-dev \
+        libavformat-dev \
+        libswscale-dev\
+        libtbb2 \
+        libtbb-dev \
+        libjpeg-dev \
+        libpng-dev \
+        libtiff-dev \
+        libjasper-dev \
+        libdc1394-22-dev
 
 #(mini)conda
 ENV PATH=/opt/conda/bin:${PATH}
