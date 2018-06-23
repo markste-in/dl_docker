@@ -1,5 +1,5 @@
 #!/bin/bash
-
+tag=1
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;
@@ -20,4 +20,4 @@ else
   echo "Running on Linux or others"
   xdg-open "http://localhost:8888"
 fi
-docker run -it -p 8888:8888 -p 6006:6006 -v ~/docker/share:/docker/share -w /docker sysfail/dl_docker
+docker pull sysfail/dl_docker:${tag} && docker run -it -p 8888:8888 -p 6006:6006 -v ~/docker/share:/docker/share -w /docker sysfail/dl_docker:${tag}
