@@ -18,8 +18,10 @@ Dockerfile with:
     - [Keras 2.2](https://keras.io/)
     - other DL utilities like tflearn, gym, scikit-learn etc.
   - Libs to tinker with automotive stuff
-    - [ptyhon-can](https://github.com/hardbyte/python-can)
-    - [mdfreader](https://github.com/ratal/mdfreader)
+    - [ptyhon-can](https://github.com/hardbyte/python-can) to handle raw CAN data (blf, asc)
+    - [mdfreader](https://github.com/ratal/mdfreader) to hanle mdf logs
+    - [asammdf](http://asammdf.readthedocs.io/) to handle mdf and CAN logging
+    - [canmatrix](https://github.com/ebroecker/canmatrix) to handle and convert dbc files
   - Some examples and tutorials for
     - Tensorflow
     - Keras
@@ -38,10 +40,11 @@ Dockerfile with:
 2. run *run_docker.sh*
   - it will download *sysfail/dl_docker* from [Docker Hub](https://hub.docker.com/r/sysfail/dl_docker/)
   - rest see above ...
-  
-| Be aware that due to convenience the jupyter is running without a password or token! |
 
 ### Supported systems
 Tested on:
 - Ubuntu 16.04 LTS and Docker 18.05
 - Mac OS Sierra (10.12.6) and Docker 18.03
+
+| **Be aware that due to convenience the jupyter is running without a password or token!** |
+|------------------------------------------------------------------------------------------|
