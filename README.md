@@ -12,9 +12,11 @@ Dockerfile with:
     - seaborn
     - matplotlib
     - opencv
+    - others like scipy, plotutils, pillow etc.
   - Deep Learning Frameworks
     - Tensorflow 1.8
     - Keras 2.2
+    - other DL utilities like tflearn, gym, scikit-learn etc.
   - Libs to tinker with automotive stuff
     - ptyhon-can
     - mdfreader
@@ -37,7 +39,7 @@ Dockerfile with:
   - it will download *sysfail/dl_docker* from docker hub
   - rest see above ...
 | Be aware that due to convenience the jupyter is running without a password or token! |
-### Supported systems 
+### Supported systems
 Tested on:
 - Ubuntu 16.04 LTS and Docker 18.05
 - Mac OS Sierra (10.12.6) and Docker 18.03
