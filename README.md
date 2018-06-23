@@ -14,12 +14,12 @@ Dockerfile with:
     - opencv
     - others like scipy, plotutils, pillow etc.
   - Deep Learning Frameworks
-    - Tensorflow 1.8
-    - Keras 2.2
+    - [Tensorflow 1.8](https://github.com/tensorflow/tensorflow)
+    - [Keras 2.2](https://keras.io/)
     - other DL utilities like tflearn, gym, scikit-learn etc.
   - Libs to tinker with automotive stuff
-    - ptyhon-can
-    - mdfreader
+    - [ptyhon-can](https://github.com/hardbyte/python-can)
+    - [mdfreader](https://github.com/ratal/mdfreader)
   - Some examples and tutorials for
     - Tensorflow
     - Keras
@@ -36,9 +36,11 @@ Dockerfile with:
 ### Run the pre-build docker
 1. Make sure you have docker installed
 2. run *run_docker.sh*
-  - it will download *sysfail/dl_docker* from docker hub
+  - it will download *sysfail/dl_docker* from [Docker Hub](https://hub.docker.com/r/sysfail/dl_docker/)
   - rest see above ...
+  
 | Be aware that due to convenience the jupyter is running without a password or token! |
+
 ### Supported systems
 Tested on:
 - Ubuntu 16.04 LTS and Docker 18.05
