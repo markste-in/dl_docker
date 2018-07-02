@@ -46,6 +46,7 @@ Dockerfile with:
 ### Supported systems
 Tested on:
 - Ubuntu 16.04 LTS and Docker 18.05
+- Ubuntu 18.04 LTS and Docker 18.05
 - Mac OS Sierra (10.12.6) and Docker 18.03
 
 | **Be aware that due to convenience the jupyter is running without a password or token!** |
