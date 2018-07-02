@@ -91,6 +91,11 @@ RUN /bin/bash -c "source activate keras_2_2" && \
 
 
 #to tinker with cars and CAN
+
+#to play with SocketCAN
+RUN apt install -y \
+      can-utils
+
 RUN /bin/bash -c "source activate keras_2_2" && \
     pip --no-cache-dir install \
       #read and handle mdf files
@@ -108,7 +113,11 @@ RUN /bin/bash -c "source activate keras_2_2" && \
         xlwt-future \
         XlsxWriter \
         PyYAML \
-        lxml
+        lxml \
+      #easy framework to play with SocketCAN
+        pyvit
+
+
 
 #Examples
 RUN mkdir -p /docker/examples && \
