@@ -1,5 +1,5 @@
 #!/bin/bash
-tag=1
+tag=2
 unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=Linux;;
