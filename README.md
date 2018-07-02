@@ -7,17 +7,17 @@ Dockerfile with:
     - python 3.6
     - jupyter notebook
   - Data Science Tools
-    - numpy
-    - pandas
-    - seaborn
-    - matplotlib
-    - opencv
-    - others like scipy, plotutils, pillow etc.
+    - [numpy](https://github.com/numpy/numpy)
+    - [pandas](https://pandas.pydata.org/)
+    - [seaborn](https://seaborn.pydata.org/)
+    - [matplotlib](https://matplotlib.org/)
+    - [opencv](https://opencv.org/)
+    - others like [scipy](https://github.com/scipy/scipy), [plotutils](https://www.gnu.org/software/plotutils/), [pillow](https://pillow.readthedocs.io/en/5.2.x/) etc.
   - Deep Learning Frameworks
     - [Tensorflow 1.8](https://github.com/tensorflow/tensorflow)
     - [Keras 2.2](https://keras.io/)
-    - other DL utilities like tflearn, gym, scikit-learn etc.
-  - Libs to tinker with automotive stuff
+    - other DL utilities like [tflearn](https://github.com/tflearn/tflearn), [gym](https://github.com/openai/gym), [scikit-learn](https://github.com/scikit-learn/scikit-learn) etc.
+  - Libs and Tools to tinker with automotive stuff
     - [ptyhon-can](https://github.com/hardbyte/python-can) to handle raw CAN data (blf, asc)
     - [mdfreader](https://github.com/ratal/mdfreader) to hanle mdf logs
     - [asammdf](http://asammdf.readthedocs.io/) to handle mdf and CAN logging
