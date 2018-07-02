@@ -22,6 +22,8 @@ Dockerfile with:
     - [mdfreader](https://github.com/ratal/mdfreader) to hanle mdf logs
     - [asammdf](http://asammdf.readthedocs.io/) to handle mdf and CAN logging
     - [canmatrix](https://github.com/ebroecker/canmatrix) to handle and convert dbc files
+    - [can-utils](https://github.com/linux-can/can-utils) userspace utilities for SocketCAN
+    - [pyvit](https://github.com/linklayer/pyvit) Framework to easily work with CAN interfaces and SocketCAN
   - Some examples and tutorials for
     - Tensorflow
     - Keras
