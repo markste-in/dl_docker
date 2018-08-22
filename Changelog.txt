@@ -1,0 +1,9 @@
+V3
+- Added noVNC and GUI support via x11vnc
+- Upgraded to Tensorflow 1.9
+- Start process handled by bash files
+- Improved docker run script (now checks online and offline for image)
+
+V2
+- Added SocketCAN and pyvit
+- Better build process (tagging)
