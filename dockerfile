@@ -10,8 +10,11 @@ ENV PATH=/opt/conda/bin:${PATH}
 ENV PYTHONIOENCODING UTF-8
 
 RUN apt update && \
-    apt install -y apt-utils \
-    locales
+    apt install -y --no-install-recommends apt-utils \
+    locales && \
+    apt clean && \
+    apt autoremove && \
+    rm -rf /var/lib/apt/lists/*
 
 
 #set locale correct
@@ -20,17 +23,21 @@ ENV LANG en_US.UTF-8
 ENV LANGUAGE en_US:en
 ENV LC_ALL en_US.UTF-8
 
+
 RUN apt update && \
-      apt install -y \
+      apt install -y --no-install-recommends\
       git \
       curl \
       wget \
       bzip2 \
-      software-properties-common
+      software-properties-common && \
+      apt clean && \
+      apt autoremove && \
+      rm -rf /var/lib/apt/lists/*
 
 #requirements for opencv & gym (q-learning)
 RUN   apt update && \
-      apt install -y build-essential \
+      apt install -y --no-install-recommends build-essential \
         cmake \
         libgtk2.0-dev \
         pkg-config \
@@ -44,7 +51,10 @@ RUN   apt update && \
         libtiff-dev \
         libjasper-dev \
         libdc1394-22-dev \
-        python-opengl
+        python-opengl && \
+        apt clean && \
+        apt autoremove && \
+        rm -rf /var/lib/apt/lists/*
 
 #install miniconda
 RUN wget https://repo.continuum.io/miniconda/Miniconda3-latest-Linux-x86_64.sh -q  && \
@@ -75,7 +85,8 @@ RUN /bin/bash -c "source activate keras_2_2" && \
       Cython \
       opencv-contrib-python \
       ipython-autotime \
-      jupyter_contrib_nbextensions && \
+      jupyter_contrib_nbextensions \
+      lucid==0.2.3 && \
     jupyter contrib nbextensions install --system && \
     jupyter nbextension enable execute_time/ExecuteTime && \
     conda install h5py hdf5
@@ -83,7 +94,7 @@ RUN /bin/bash -c "source activate keras_2_2" && \
 #install DL-frameworks and kits
 RUN /bin/bash -c "source activate keras_2_2" && \
     pip --no-cache-dir install \
-      tensorflow==1.8 \
+      tensorflow==1.9 \
       keras==2.2 \
       scikit-learn \
       gym \
@@ -93,8 +104,11 @@ RUN /bin/bash -c "source activate keras_2_2" && \
 #to tinker with cars and CAN
 
 #to play with SocketCAN
-RUN apt install -y \
-      can-utils
+RUN apt update && apt install -y --no-install-recommends\
+      can-utils && \
+      apt clean && \
+      apt autoremove && \
+      rm -rf /var/lib/apt/lists/*
 
 RUN /bin/bash -c "source activate keras_2_2" && \
     pip --no-cache-dir install \
@@ -135,14 +149,29 @@ RUN mkdir -p /docker/examples && \
 
 COPY StartHere.ipynb /docker/
 
-#clean up
-RUN apt clean && \
-    apt autoremove
+
+#noVNC
+ADD startup.sh /startup.sh
+
+RUN apt-get update && \
+    apt-get install -y --no-install-recommends git xterm x11vnc python python-numpy unzip xvfb firefox openbox geany menu screen htop nano net-tools && \
+    cd /root && git clone https://github.com/novnc/noVNC.git && \
+    cd noVNC/utils && git clone https://github.com/kanaka/websockify websockify && \
+    cd /root && \
+    chmod 0755 /startup.sh && \
+    apt clean && \
+    apt autoremove && \
+    rm -rf /var/lib/apt/lists/*
+
+ADD start-ipython.sh /root/start-ipython.sh
+RUN chmod 0755 /root/start-ipython.sh
 
 
 #IPython
 EXPOSE 8888
 #TensorBoard
 EXPOSE 6006
+#noVNC
+EXPOSE 6080
 
-CMD ["/bin/bash","-c","source activate keras_2_2 && jupyter notebook --ip=0.0.0.0 --allow-root --NotebookApp.token='' --no-browser"]
+CMD ["/startup.sh"]

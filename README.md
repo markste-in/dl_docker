@@ -1,8 +1,16 @@
 # [dl_docker](https://hub.docker.com/r/sysfail/dl_docker/)
 ## Purpose
 Analysis and handling of automotive data with deep learning frameworks. So far without GPU support since it is made to be used on laptops without dedicated Nvidia GPU. (For people who work on the move)
+## Quick links
+- IPython -> http://localhost:8888
+- TensorBoard -> http://localhost:6006
+- noVNC (Docker GUI via Browser) -> http://localhost:6080/vnc.html
+- Terminal:
+  - Within IPython: "Files" Tab -> "New" -> "Terminal"
+  - Within noVNC: right click on the desktop -> terminal emulator
 ## What is this?
 Dockerfile with:
+  - GUI access via noVNC (Browser)
   - Python
     - python 3.6
     - jupyter notebook
@@ -14,9 +22,9 @@ Dockerfile with:
     - [opencv](https://opencv.org/)
     - others like [scipy](https://github.com/scipy/scipy), [plotutils](https://www.gnu.org/software/plotutils/), [pillow](https://pillow.readthedocs.io/en/5.2.x/) etc.
   - Deep Learning Frameworks
-    - [Tensorflow 1.8](https://github.com/tensorflow/tensorflow)
+    - [Tensorflow 1.9](https://github.com/tensorflow/tensorflow)
     - [Keras 2.2](https://keras.io/)
-    - other DL utilities like [tflearn](https://github.com/tflearn/tflearn), [gym](https://github.com/openai/gym), [scikit-learn](https://github.com/scikit-learn/scikit-learn) etc.
+    - other DL utilities like [tflearn](https://github.com/tflearn/tflearn), [gym](https://github.com/openai/gym), [scikit-learn](https://github.com/scikit-learn/scikit-learn), [lucid](https://github.com/tensorflow/lucid) etc.
   - Libs and Tools to tinker with automotive stuff
     - [ptyhon-can](https://github.com/hardbyte/python-can) to handle raw CAN data (blf, asc)
     - [mdfreader](https://github.com/ratal/mdfreader) to hanle mdf logs
@@ -35,8 +43,9 @@ Dockerfile with:
 3. run *run_docker.sh*
   - it will start *sysfail/dl_docker*
   - it will link the folder *~/docker/share* (where you should store the files you want to work with)
-  - it will expose port 8888 (jupyter notebook) and 6006 (tensorboard)
+  - it will expose port 8888 (jupyter notebook), 6006 (tensorboard) and port 6080 (noVNC)
   - it will open the a browser tab pointing to http://localhost:88888
+4. The docker image can also be accessed via noVNC. A recent browser is necessary (HTML5)
 ### Run the pre-build docker
 1. Make sure you have docker installed
 2. run *run_docker.sh*
