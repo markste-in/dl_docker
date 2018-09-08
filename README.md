@@ -1,7 +1,7 @@
 # [dl_docker](https://hub.docker.com/r/sysfail/dl_docker/)
 ## Purpose
 Analysis and handling of automotive data with deep learning frameworks.
-It with CPU and GPU (Cuda 9) Support
+It comes with CPU and GPU (Cuda 9) support
 ## Quick links
 - IPython -> https://localhost:8888
 - TensorBoard -> https://localhost:6006
