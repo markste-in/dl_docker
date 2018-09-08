@@ -77,6 +77,3 @@ Dockerfile with:
 ### Supported systems
 - Ubuntu 16.04 LTS / 18.04.1 LTS (CPU and GPU)
 - Mac OS Sierra (10.12.6) and Docker 18.03 (CPU only)
-
-| **Be aware that due to convenience the jupyter is running without a password or token!** |
-|------------------------------------------------------------------------------------------|
