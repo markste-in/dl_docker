@@ -2,8 +2,8 @@
 ## Purpose
 Analysis and handling of automotive data with deep learning frameworks. So far without GPU support since it is made to be used on laptops without dedicated Nvidia GPU. (For people who work on the move)
 ## Quick links
-- IPython -> http://localhost:8888
-- TensorBoard -> http://localhost:6006
+- IPython -> https://localhost:8888
+- TensorBoard -> https://localhost:6006
 - noVNC (Docker GUI via Browser) -> http://localhost:6080/vnc.html
 - Terminal:
   - Within IPython: "Files" Tab -> "New" -> "Terminal"

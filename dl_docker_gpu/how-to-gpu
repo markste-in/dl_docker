@@ -1,0 +1,10 @@
+How To gpu
+
+install tensorflow and tensorflow-gpu in your python ENV
+
+install official nvidia driver http://us.download.nvidia.com/XFree86/Linux-x86_64/390.87/NVIDIA-Linux-x86_64-390.87.run
+
+install latest docker-ce https://docs.docker.com/install/linux/docker-ce/ubuntu/#install-docker-ce-1
+
+#Nvidia-Docker : https://github.com/NVIDIA/nvidia-docker
+sudo apt-get install -y nvidia-docker2

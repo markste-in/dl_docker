@@ -1,0 +1,9 @@
+FROM dl_docker_gpu_cudnn:1a
+
+LABEL maintainer "Tommy Markstein <mail@markste.in>"
+
+RUN /bin/bash -c "source activate keras_2_2 && \
+    pip --no-cache-dir install \
+      tensorflow-gpu==1.10"
+
+ADD StartHereWithGPU.ipynb /docker/

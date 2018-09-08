@@ -1,5 +1,6 @@
 #!/bin/bash
 export DISPLAY=:1
+/usr/sbin/sshd -D &
 cd /docker
 /root/start-ipython.sh
 Xvfb :1 -screen 0 1600x900x16 &

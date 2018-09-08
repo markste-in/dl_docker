@@ -1,3 +1,16 @@
+V4
+- added ssh with pwd 'dl_docker'
+- created keys for https connection
+- added gpu support as a separate image (dl_docker_gpu)
+- added sympy
+- upgraded to tensorflow 1.10
+- added test ipython notebook for gpu (StartHereWithGPU)
+- build script is now creating a log file
+- fixed major bug with python environments
+- added pytest
+- upgraded pip to 18
+- renamed non-gpu version to dl_docker_cpu:1
+
 V3
 - Added noVNC and GUI support via x11vnc
 - Upgraded to Tensorflow 1.9
