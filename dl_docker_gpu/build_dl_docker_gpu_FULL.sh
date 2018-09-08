@@ -27,6 +27,7 @@ echo "Build image with necessary python libs" >> nvidia_docker_build.log
 docker build -f full_gpu -t dl_docker_gpu_full:$DOCKER_TAG . 2>&1 | tee -a nvidia_docker_build.log
 docker tag dl_docker_gpu_full:$DOCKER_TAG "$DOCKER_ID_USER/dl_docker_gpu_full:$DOCKER_TAG"
 
+docker tag dl_docker_gpu_full:$DOCKER_TAG "dl_docker_gpu:$DOCKER_TAG"
 docker tag dl_docker_gpu_full:$DOCKER_TAG "$DOCKER_ID_USER/dl_docker_gpu:$DOCKER_TAG"
 
 echo "##### END OF BUILD RUN #####" >> nvidia_docker_build.log
