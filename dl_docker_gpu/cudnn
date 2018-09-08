@@ -1,5 +1,5 @@
 #Base image changed from Ubuntu to dl_docker /markstein
-FROM dl_docker_gpu_devel:1a
+FROM dl_docker_gpu_devel:1
 #ARG repository
 #FROM ${repository}:9.0-devel-ubuntu16.04
 LABEL maintainer "NVIDIA CORPORATION <cudatools@nvidia.com>"

@@ -1,6 +1,6 @@
 #!/bin/sh
 export DOCKER_ID_USER="sysfail"
-export DOCKER_TAG="1a"
+export DOCKER_TAG="1"
 echo "##### NEW BUILD RUN #####" >> nvidia_docker_build.log
 echo " ### dl_docker_gpu ###" >> nvidia_docker_build.log
 echo "$(date) $(ls -1 | wc -l)" >> nvidia_docker_build.log

@@ -1,5 +1,5 @@
 #!/bin/bash
-tag=1a
+tag=1
 unameOut="$(uname -s)"
 repository="sysfail"
 case "${unameOut}" in

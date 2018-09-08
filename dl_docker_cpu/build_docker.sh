@@ -1,6 +1,6 @@
 #!/bin/sh
 export DOCKER_ID_USER="sysfail"
-export DOCKER_TAG="1a"
+export DOCKER_TAG="1"
 echo "##### NEW BUILD RUN #####" >> docker_build_cpu.log
 echo " ### dl_docker_cpu ###" >> docker_build_cpu.log
 echo "$(date) $(ls -1 | wc -l)" >> docker_build_cpu.log

@@ -1,4 +1,4 @@
-FROM dl_docker_cpu:1a
+FROM dl_docker_cpu:1
 #FROM ubuntu:16.04
 LABEL maintainer "NVIDIA CORPORATION <cudatools@nvidia.com>"
 
